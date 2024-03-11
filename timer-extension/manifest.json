@@ -17,5 +17,21 @@
     "default_title": "Timer Extension Action Title",
     "default_popup": "popup.html"
   },
-  "options_page": "options.html "
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://admin.shopify.com/store/*/products/*"],
+      "js": ["content.js"]
+    }
+  ]
 }
